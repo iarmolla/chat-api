@@ -1,3 +1,8 @@
-const secret = 'secretToken'
+import { config } from "dotenv"
 
-export default secret
+config()
+
+export const secret = 'secretToken'
+export const PORT = process.env.PORT
+export const MONGO_URL = process.env.MONGO_URL
+
