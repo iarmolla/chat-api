@@ -1,6 +1,6 @@
 import User from '../models/User.js'
 import jwt from 'jsonwebtoken'
-import secret from '../config.js'
+import { secret } from '../config.js'
 
 export const getUsers = async (req, res) => {
     try {
