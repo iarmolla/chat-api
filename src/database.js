@@ -1,5 +1,4 @@
 import mongoose from 'mongoose'
-import { MONGO_URL } from './config.js'
 
 mongoose.set("strictQuery", false);
 // mongoose.connect('mongodb://localhost:27017/guitars')
