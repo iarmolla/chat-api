@@ -17,21 +17,21 @@ app.use(cors())
 
 app.use(json())
 
-app.use(urlencoded({extended: false}))
+app.use(urlencoded({ extended: false }))
 
 app.use(usersRoutes)
 
 io.on('connection', (socket) => {
     socket.on('message', (message) => {
-        socket.broadcast.emit('received',{
+        socket.broadcast.emit('received', {
             body: message,
             from: socket.id
         })
     })
 })
 
-app.get('/', (req, res) => {
-    res.send(200)
+app.use((req, res, next) => {
+    res.status(404).json({ message: "Not found" })
 })
 
 export default server
