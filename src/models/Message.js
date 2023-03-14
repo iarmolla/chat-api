@@ -4,7 +4,8 @@ const messageSchema = new Schema({
     room: String,
     from: String,
     email: String,
-    message: String
+    message: String,
+    color: String
 }, { timestamps: true })
 
 export default model('Message', messageSchema)

@@ -53,7 +53,8 @@ export const signUp = async (req, res) => {
         const newUser = new User({
             username: username,
             email: email,
-            password: password
+            password: password,
+            color: getRandomColor()
         })
         const emailExists = await User.findOne({ email: email })
         if (emailExists) {
@@ -69,7 +70,25 @@ export const signUp = async (req, res) => {
             token
         })
     } catch (error) {
-        console.log(error)
         res.status(400).send({ error })
     }
+}
+
+function getRandomColor() {
+    let colores = [];
+    let num = (Math.floor(Math.random() * 4) * 4).toString(16);
+    let letters = ['0', 'F', num];
+    let color = '#';
+
+    for (let i = 0; i < 3; i++) {
+        let pos = Math.floor(Math.random() * letters.length);
+        color += letters[pos];
+        letters.splice(pos, 1);
+    }
+
+    if (colores.includes(color))
+        return getRandomColor();
+    else
+        colores.push(color)
+   return (color)
 }

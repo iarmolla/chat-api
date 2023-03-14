@@ -4,7 +4,8 @@ import bcrypt from 'bcrypt'
 const userSchema = new Schema({
     username: String,
     email: String,
-    password: String
+    password: String,
+    color: String
 }, { timestamps: true })
 
 userSchema.methods.encryptPassword = async (password) => {

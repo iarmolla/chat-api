@@ -5,6 +5,7 @@ import cors from 'cors'
 import usersRoutes from './routes/users.routes.js'
 import Message from './models/Message.js'
 import messagesRoutes from './routes/messages.routes.js'
+import User from './models/User.js'
 
 const app = express()
 const server = http.createServer(app)
@@ -31,12 +32,14 @@ io.on('connection', (socket) => {
         socket.rooms.size === 0
     });
     socket.on('message', async (message, room, email) => {
+        const color = await User.findOne({ email: email })
         const msg = new Message(
             {
                 email: email,
                 from: room,
                 message: message,
-                room: room
+                room: room,
+                color: color.color
             }
         )
         await msg.save()
