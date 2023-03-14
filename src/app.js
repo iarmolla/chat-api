@@ -4,6 +4,7 @@ import http from 'http'
 import cors from 'cors'
 import usersRoutes from './routes/users.routes.js'
 import Message from './models/Message.js'
+import messagesRoutes from './routes/messages.routes.js'
 
 const app = express()
 const server = http.createServer(app)
@@ -44,14 +45,7 @@ io.on('connection', (socket) => {
 
 })
 
-app.get('/messages/:room', async (req, res) => {
-    try {
-        res.send(await Message.find({ room: req.params.room }))
-    } catch (error) {
-        res.send(error)
-    }
-})
-
+app.use(messagesRoutes)
 
 app.use((req, res, next) => {
     res.status(404).json({ message: "Not found" })
