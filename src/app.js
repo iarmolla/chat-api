@@ -45,8 +45,7 @@ io.on('connection', (socket) => {
             }
         )
         await msg.save()
-        console.log(room)
-        socket.to(room).emit('received', room, await Message.find({ room: room }))
+        socket.to(room).emit('received', room , await Message.find({ room: room }))
     })
 
 })
