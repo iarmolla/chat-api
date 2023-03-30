@@ -27,9 +27,11 @@ app.use(usersRoutes)
 io.on('connection', (socket) => {
     socket.on('join', (room) => {
         socket.join(room)
+
     })
     socket.on("exit", () => {
         socket.rooms.size === 0
+
     });
     socket.on('message', async (message, room, email) => {
         const color = await User.findOne({ email: email })
@@ -43,7 +45,8 @@ io.on('connection', (socket) => {
             }
         )
         await msg.save()
-        socket.to(room).emit('received', await Message.find({ room: room }))
+        console.log(room)
+        socket.to(room).emit('received', room, await Message.find({ room: room }))
     })
 
 })
