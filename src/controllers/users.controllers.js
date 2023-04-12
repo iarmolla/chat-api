@@ -23,7 +23,7 @@ export const getUser = async (req, res) => {
 
 export const signIn = async (req, res) => {
     try {
-        const { email, password } = req.body
+        const { email } = req.body
         const user = await User.findOne({ email: email })
         if (!user) {
             return res.status(404).send({
