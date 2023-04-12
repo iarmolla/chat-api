@@ -8,8 +8,8 @@
 
 - Clona este repositorio en tu máquina local:
 - git clone https://github.com/tu-usuario/chat-react-nodejs.git
-- Abre el archivo src/services.js y asegúrate de que la variable REACT_APP_API_URL tenga la URL correcta de tu backend:
-- 
+- Abre el archivo src/env y asegúrate de que la variable PORT tenga el puerto correcto y MONGO_URL tenga la dirección hacia mongodb
+
 ### Instala las dependencias del proyecto
 
 - npm install
@@ -17,7 +17,7 @@
 ## Uso
 
 - npm run start
-- Abre tu navegador web y accede a la URL http://localhost:3000 para ver la aplicación en funcionamiento.
+- Puedes usar POSTMAN o THUNDERCLIENT para acceder a la URL y hacer las peticiones http://localhost:3030
 
 ## Contribución
 
