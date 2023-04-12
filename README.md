@@ -4,6 +4,20 @@
 
 ## Este proyecto consiste en un chat en tiempo real construido con React en el frontend y Node.js en el backend. El objetivo es mostrar cómo se puede crear una aplicación de chat funcional utilizando estas tecnologías.
 
+## Instalación
+- Abre el archivo src/services.js y asegúrate de que la variable REACT_APP_API_URL tenga la URL correcta de tu backend:
+- Clona este repositorio en tu máquina local:
+- git clone https://github.com/tu-usuario/chat-react-nodejs.git
+
+### Instala las dependencias del proyecto
+
+- npm install
+
+## Uso
+
+- npm run start
+- Abre tu navegador web y accede a la URL http://localhost:3000 para ver la aplicación en funcionamiento.
+- 
 ## Contribución
 
 - Si deseas contribuir a este proyecto, sigue los siguientes pasos:
