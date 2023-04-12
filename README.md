@@ -17,7 +17,7 @@
 
 - npm run start
 - Abre tu navegador web y accede a la URL http://localhost:3000 para ver la aplicación en funcionamiento.
-- 
+
 ## Contribución
 
 - Si deseas contribuir a este proyecto, sigue los siguientes pasos:
